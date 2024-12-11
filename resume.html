@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUME</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #191717;
+            background-color: rgb(10, 10, 10); 
+            background-image: none;
+            transition: background 0.5s ease;
+            padding-right: 10px;
+            padding-bottom: 30px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header h1 { 
+          padding-left: 775px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #212121;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+          animation: glow 0.5s infinite alternate; 
+    }
+
+    h2 {
+  animation: glow 1.5s infinite alternate; 
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(95, 140, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(95, 135, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
+  }
+}
+
+        
+
+        
+        @keyframes flicker {
+            0%, 100% { background-image: none; }
+            10%, 90% { background-image: url('tubelight.png'); }
+            20%, 80% { background-image: none; }
+            30%, 70% { background-image: url('tubelight.png'); }
+            40%, 60% { background-image: none; }
+            50% { background-image: url('tubelight.png'); }
+        }
+
+
+        .flicker {
+            animation: flicker 1s ease-in-out;
+        }
+
+        .Resume img {
+         padding-bottom: 80px;
+          padding-left: 385px;
+          width: 950px
+          
+          
+        }
+
+        h3 { color: rgb(10, 10, 10); 
+        padding-left: 740px;
+    kerning: -40px;
+    font-size: 60px;
+  font-weight: 500;}
+
+  .cta-button {
+      padding: 10px 30px;
+      font-size: 1rem;
+      color: #111;
+      background-color: #ffffff;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: box-shadow 0.1s ease; 
+    }
+
+    .cta-button:hover {
+      animation: glow 0.5s infinite alternate; 
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.692), 0 0 20px rgba(95, 140, 255, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 20px rgb(95, 135, 255), 0 0 30px rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    .download { 
+    align-self: center;
+  margin-bottom: 70px;
+padding-left: 720px;}
+  
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="index.html">
+                <img src="mylogo.png" alt="Kush Bothra">
+            </a>
+        </h1>
+        <button id="toggleButton">Light On</button>
+    </header>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        let isBackgroundActive = false;
+
+        toggleButton.addEventListener('click', () => {
+            if (!isBackgroundActive) {
+               
+                document.body.classList.add('flicker');
+
+               
+                setTimeout(() => {
+                    document.body.classList.remove('flicker');
+                    document.body.style.backgroundImage = 'url("tubelight.png")';
+                    document.body.style.backgroundRepeat = 'no-repeat'; 
+                }, 500); 
+
+                toggleButton.textContent = 'Light off';
+            } else {
+              
+                document.body.style.backgroundImage = 'none';
+                toggleButton.textContent = 'Light On';
+            }
+
+            isBackgroundActive = !isBackgroundActive; 
+        });
+    </script>
+<h3>Resume</h3>
+<div class="Resume" id="Resume">
+    <img src="resume.png" alt="Resume">
+  </div>
+
+  <div class="download resume">
+    <a href="Resume.pdf" download="KushBothra_Resume" class="cta-button">Download Formal Resume →</a> 
+    <div>
+
+
+</body>
+</html>
+

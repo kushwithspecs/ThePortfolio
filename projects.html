@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #dcdcdc;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #121212;
+    }
+
+    header .logo {
+        padding-top: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #6bc9ff;
+    }
+
+    header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 40px;
+  padding-left: 200px;
+  
+}
+
+nav a {
+  margin-left: 20px;
+  color: #bbb;
+  text-decoration: none;
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 80px;
+  font-size: large;
+}
+
+nav a:hover {
+  color: white;
+}
+
+
+    .container {
+      padding: 40px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 30px;
+      font-weight: 500;
+      background: linear-gradient(180deg, #ffffff, #50a2ff);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+align-self: center;
+padding-left: 760px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+
+margin-bottom: 70px;
+background: linear-gradient(180deg, #ffffff, #3593ff);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+font-weight: 500;
+text-shadow: 0 0 10px rgba(255, 255, 255, 0.475);
+font-size: 40px;
+align-self: center;
+padding-left: 740px;
+    }
+
+    .container {
+      width: 1400px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding-left: 210px;
+      margin-bottom: 30px;
+    }
+
+    .grid-item {
+  background-color: rgba(30, 30, 30, 1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  position: relative;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+}
+
+.grid-item:hover {
+  box-shadow: 0 0 20px 5px #ffffff2a; 
+  transform: translateY(-10px); 
+}
+
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .grid-item h3 {
+      position: absolute;
+      bottom: -10px;
+      color: rgba(255, 255, 255, 1);
+      text-align: center;
+      padding-top: 160px;
+    }
+    .grid-item p {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  color: #e3e3e3; 
+  font: weight 500px;;
+  background: linear-gradient(180deg, #ffffff, #959595);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+text-align: center;
+padding-right: 20px;
+text-decoration: none;
+
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    
+    <h1>
+        <a href="index.html">
+          <img src="mylogo.png" alt="Kush Bothra">
+        </a>
+      </h1>
+      
+    <nav>
+
+      <a href="resume.html">Resume</a>
+    </nav>
+  </header>
+  <h2>Projects</h2>
+  <div class="container">
+    <div class="grid">
+      <div class="grid-item">
+        <a href="landing pages.html">
+            <img src="landing pages.png" alt="Landing Pages">
+            <p>Landing Pages</p>
+        </a>
+    </div>
+      <div class="grid-item">
+        <img src="branding.png" alt="Branding">
+        <p>Branding</p>
+      </div>
+      <div class="grid-item">
+        <img src="logos.png" alt="Logos">
+        <p>Logos</p>
+      </div>
+      <div class="grid-item">
+        <img src="e-com.png" alt="E-Commerce/Social Media Ads">
+        <p>E-Commerce/Social Media Ads</p>
+      </div>
+      <div class="grid-item">
+        <img src="pitch decks.png" alt="Pitch Decks">
+        <p>Pitch Decks</p>
+      </div>
+      <div class="grid-item">
+        <a href="passion projects.html">
+        <img src="passion projects.png" alt="Passion Projects">
+        <p>Passion Projects</p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font: 400 20px Inter, sans-serif;
+  }
+  
+  .hero-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  min-height: 931px;
+  width: 100%;
+  align-items: center;
+  padding: px 0 100px ;
+  padding-bottom: 70px;
+}
+  
+  @media (max-width: 991px) {
+    .hero-container {
+      max-width: 100%;
+      
+    }
+  }
+  
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-size: cover;
+    overflow: hidden;
+  }
+  
+  .content-wrapper {
+    position: relative;
+    display: flex;
+    margin-bottom: -4px;
+    width: 100%;
+    max-width: 1506px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @media (max-width: 991px) {
+    .content-wrapper {
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .header-content {
+    align-self: stretch;
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 10px;
+  }
+  
+  @media (max-width: 991px) {
+    .header-content {
+      max-width: 100%;
+    }
+  }
+  
+  .profile-info {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .profile-image {
+    aspect-ratio: 1.88;
+    object-fit: contain;
+    object-position: center;
+    width: 109px;
+    max-width: 100%;
+  }
+  
+  .name-title {
+    align-self: start;
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+  }
+  
+  .name {
+    color: #fff;
+ 
+  }
+  
+  .title {
+    color: #717171;
+    align-self: start;
+  }
+  
+  .navigation {
+    display: flex;
+    gap: 40px 70px;
+    color: #c2c2c2;
+    white-space: nowrap;
+    flex-wrap: wrap;
+    margin: auto 0;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 991px) {
+    .navigation {
+      max-width: 100%;
+      white-space: initial;
+      text-decoration: none;
+    }
+  }
+  
+  .availability-badge {
+    border-radius: 628px;
+background-color: #111111;
+    display: flex;
+    margin-top: 35px;
+    width: 202px;
+    max-width: 100%;
+    gap: 8px;
+    font-size: 17px;
+    color: #d9d9d9;
+    padding: 11px 13px;
+    border: 1px solid #aeaeae;
+  }
+  
+  @media (max-width: 991px) {
+    .availability-badge {
+      margin-top: 40px;
+    }
+  }
+  
+  .availability-indicator {
+    background-color: #f0cc19;
+    border-radius: 50%;
+    display: flex;
+    width: 15px;
+    height: 15px;
+    margin: auto 0;
+  }
+  
+  .availability-text {
+    flex-grow: 1;
+    width: 152px;
+  }
+  
+  .decorative-image {
+    aspect-ratio: 0.95;
+    object-fit: contain;
+    object-position: center;
+    width: 138px;
+    z-index: 10;
+    margin-top: 26px;
+    max-width: 100%;
+  }
+  
+  .hero-title {
+    aspect-ratio: 2.53;
+    object-fit: contain;
+    object-position: center;
+    width: 648px;
+    max-width: 100%;
+  }
+  
+  .hero-description {
+    color: #f7f7f7;
+  }
+  
+  @media (max-width: 991px) {
+    .hero-description {
+      max-width: 100%;
+    }
+  }
+  
+  .cta-container {
+    display: flex;
+    margin-top: 77px;
+    width: 244px;
+    max-width: 100%;
+    flex-direction: column;
+    color: #000;
+    .cta-button {
+    border-radius: 51px;
+    background-color: #d9d9d9;
+    display: flex;
+    gap: 11px;
+    cursor: pointer;
+    padding: 18px 49px;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    transform: translateY(0);
+    box-shadow: 0 0 0 rgba(217, 217, 217, 0);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(217, 217, 217, 0.2),
+                0 0 30px rgba(217, 217, 217, 0.1),
+                0 0 50px rgba(217, 217, 217, 0.05);
+    border-color: rgba(217, 217, 217, 0.3);
+  }
+
+  .cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(217, 217, 217, 0.2);
+  }
+
+
+  .cta-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 17px;
+    margin: auto 0;
+    transition: transform 0.3s ease;
+  }
+
+  .cta-button:hover .cta-icon {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 991px) {
+    .cta-button {
+      padding: 16px 40px;
+    }
+  }
+  
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 51px;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 0.5s ease;
+  }
+
+  .cta-button:hover::before {
+    background-position: -100% 0;
+  }
+  }
+  
+  @media (max-width: 991px) {
+    .cta-container {
+      margin-top: 40px;
+    }
+  }
+  
+  .cta-button {
+    border-radius: 51px;
+    background-color: #d9d9d9;
+    display: flex;
+    gap: 11px;
+    cursor: pointer;
+    padding: 18px 49px;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  @media (max-width: 991px) {
+    .cta-button {
+      padding: 0 20px;
+    }
+  }
+  
+  .cta-text {
+    flex-grow: 1;
+  }
+  
+  .cta-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 17px;
+    margin: auto 0;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .image-hover-container {
+        position: relative;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    .decorative-image {
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    .image-primary {
+        opacity: 1;
+    }
+
+    .image-secondary {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+    .image-hover-container:hover .image-primary {
+        opacity: 0;
+    }
+
+    .image-hover-container:hover .image-secondary {
+        opacity: 1;
+    }
+
+  
+    .image-hover-container:hover .decorative-image {
+        transform: scale(1.02);
+    }
+
+   
+    .decorative-image {
+        filter: brightness(1);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .image-hover-container:hover .image-secondary {
+        filter: brightness(1.1);
+    }
+
+    .featured-section {
+      text-align: center;
+      margin: 50px auto;
+      max-width: 1200px;
+    }
+
+    .featured-section h1 {
+      color: #A9BCE3;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .featured-image img {
+      width: 100%;
+      max-width: 1200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+  
+
+  <section class="hero">
+    <div class="hero-container">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8860e52e2bd0bd4939041f677b60d2cc35c279d2a2c82254b61600e8f52ac2e8?placeholderIfAbsent=true&apiKey=ef26f279dc304a60bc525c8377ff5ae0" alt="" class="hero-background" />
+      <div class="content-wrapper">
+        <header class="header-content">
+          <div class="profile-info">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9952f9f5bd39a873dd6d72ce508f1fbb31feb4d139996dfb8ea818ff28cf1909?placeholderIfAbsent=true&apiKey=ef26f279dc304a60bc525c8377ff5ae0" alt="Kush Bothra's profile picture" class="profile-image" />
+            <div class="name-title">
+              <h1 class="name">Kush Bothra</h1>
+              <p class="title">Designer</p>
+            </div>
+          </div>
+          <nav class="navigation">
+            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#resume">Resume</a>
+          </nav>
+        </header>
+        <div class="availability-badge">
+          <div class="availability-indicator" aria-hidden="true"></div>
+          <p class="availability-text">2 spots available now</p>
+        </div>
+        <div class="image-hover-container">
+          <img 
+              src="me pfp 1.png" 
+              alt="Decorative" 
+              class="decorative-image image-primary"
+          >
+          <img 
+              src="me 2 pfp 1.png" 
+              alt="Decorative" 
+              class="decorative-image image-secondary"
+          >
+      </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d02752d2b54e8381ff9da3460ee611cebf62d430c5bcdd16bdb0c8ae011dd039?placeholderIfAbsent=true&apiKey=ef26f279dc304a60bc525c8377ff5ae0" alt="Kush Bothra" class="hero-title" />
+        <p class="hero-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br />
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </p>
+        <div class="cta-container">
+          <a href="https://cal.com/kush-bothra-frpgce" target="_blank" class="cta-button">
+            <span class="cta-text">Book a call</span>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d99db6d99be0c9831b40fe6842ca09d8b2d24c8d6f710e6261653bd51c3a38a?placeholderIfAbsent=true&apiKey=ef26f279dc304a60bc525c8377ff5ae0" alt="" class="cta-icon" aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-section">
+    <h1>Featured Projects</h1>
+    <div class="featured-image">
+      <img src="fEATURED pRODUCTS.png" alt="Featured Projects">
+    </div>
+  </section>
+
+</section>
+</html>
